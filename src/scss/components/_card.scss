@@ -1,0 +1,129 @@
+// card
+.card {
+  border-radius: 6px;
+  background: $secondary;
+  padding: 1rem;
+  transition: all .3s;
+  border: 1px solid $text;
+  box-shadow: 3px 5px 13px rgba(33, 33, 33, 0.7);
+
+  &__title {
+    font-size: 22px;
+  }
+
+  &__btn {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid $text;
+    background: transparent;
+    color: currentColor;
+    cursor: pointer;
+    transition: all 0.3s;
+    &.primary {
+      background: darkcyan;
+      &:hover {
+        background: darkseagreen;
+      }
+    }
+    &:hover {
+      background: $tertiary;
+    }
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+
+  &__footer {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__image {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all .3s;
+    &.fade-out {
+      transform: scale(0);
+      opacity: 0;
+    }
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text;
+      background: $quatenary;
+      cursor: pointer;
+      opacity: 1;
+      transition: all .3s;
+      @media (min-width: $lg) {
+        opacity: 0;
+      }
+    }
+    .info {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 4px;
+      font-size: 12px;
+      background: rgba(9, 9, 9, .5);
+      width: 100%;
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s;
+      @media (min-width: $lg) {
+        bottom: -50px;
+      }
+    }
+    .info-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      padding-left: .5rem;
+      background: darkcyan;
+      transition: all .3s;
+    }
+    @media (min-width: $lg) {
+      &:hover {
+        .remove {
+          opacity: .8;
+        }
+        .info {
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

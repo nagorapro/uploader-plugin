@@ -1,0 +1,21 @@
+body {
+  min-height: 100vh;
+  padding: 2rem 0;
+  font-family: "Open Sans", sans-serif;
+  color: $text;
+  background: $primary;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
